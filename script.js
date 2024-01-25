@@ -21,7 +21,7 @@ nil=undefined;
 console.log(nil);
 num= -1/0; //infinity and -infinty
 console.log(num);
-num= math.sqrt(-1);
+num= Math.sqrt(-1);
 console.log(num);
 num= 0* -1;
 console.log(num);
