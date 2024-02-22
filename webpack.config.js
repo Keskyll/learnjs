@@ -3,15 +3,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 
 
-console.log(_dirname);
-console.log(path.resolve(_dirname, 'dist'));
+console.log(__dirname);
+console.log(path.resolve(__dirname, 'dist'));
 
 module.exports = {
-  entry: './src/index.js',
+    entry: './src/index.js',
     output: {
         filename: 'main.js',
         path: path.resolve(__dirname, 'dist'),
-        clean:true,
+        clean: true,
     },
     devServer: {
         static: {
@@ -21,23 +21,23 @@ module.exports = {
         port: 9000,
     },
     module: {
-         rules: [
+        rules: [
             {
-                 test: /\.css$/i,
-                 use: [MiniCssExtractPlugin.loader, "css-loader"],
+                test: /\.css$/i,
+                use: [MiniCssExtractPlugin.loader, "css-loader"],
             },
             {
-                 test: /\.s[ac]css$/i,
-                 use: [MiniCssExtractPlugin.loader,"css-loader","sass-loader"],
+                test: /\.s[ac]css$/i,
+                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
             },
         ],
     },
-  plugins: [
+    plugins: [
         new HtmlWebpackPlugin({
-             template: './src/index.html'
-         }),
-         new MiniCssExtractPlugin(),
-         
+            template: './src/index.html'
+        }),
+        new MiniCssExtractPlugin(),
+
 
     ],
 };
